@@ -8,10 +8,23 @@ const ReplyScheme = new mongoose.Schema({
     },
     message: {
         type: String
+    },
+    parentId: {
+        type: Schema.Types.ObjectId,
+        ref: "Reply"
+    },
+    discussionId: {
+        type: Schema.Types.ObjectId,
+        ref: "Discussion"
     }
 },{
     versionKey: false,
     timestamps: true});
 
-const Reply = mongoose.model("reply", ReplyScheme, "reply");
+
+ReplyScheme.pre('find', function () {
+    this.populate('user', 'username');
+});
+
+const Reply = mongoose.model("Reply", ReplyScheme, "reply");
 module.exports = Reply;

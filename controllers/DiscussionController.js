@@ -5,13 +5,19 @@ const {check, validationResult} = require('express-validator');
 
 exports.createDiscussion = async (req, res) => {
     let reply = new Reply();
+    let discussion = new Discussion();
+    discussion = await discussion.save();
+
     reply.user = req.user;
     reply.message = req.body.message;
-    reply.save();
+    reply.parentId = null;
+    reply.discussionId = discussion;
+    reply = await reply.save();
 
-    let discussion = new Discussion();
     discussion.author = req.user;
     discussion.replies.push(reply);
+    discussion = await discussion.save();
+
     try {
         discussion.save()
     } catch (err) {
@@ -31,11 +37,11 @@ exports.createDiscussion = async (req, res) => {
 
 exports.getAllDiscussion = async (req, res) => {
     try {
-        const discussionArray = await Discussion.find()
+        const discussions = await Discussion.find()
         return res.status(200).json({
             status: 'success',
             data: {
-                discussionArray
+                discussions
             }
         });
     } catch (err) {
@@ -49,7 +55,7 @@ exports.getAllDiscussion = async (req, res) => {
 exports.deleteOneDiscussion = async (req, res) => {
     try {
         // const discuss = await Discussion.findOne();
-        Discussion.deleteOne({_id: req.params.id})
+        Discussion.deleteOne({_id: req.params.id, author: req.user})
         return res.status(200).json({
             status: 'success',
             data: null
@@ -64,7 +70,7 @@ exports.deleteOneDiscussion = async (req, res) => {
 
 exports.getOneDiscussion = async (req, res) => {
     try {
-        const discuss = await Discussion.findOne({_id: req.params.id});
+        const discuss = await Discussion.findOne({_id: req.params.id}).populate("replies");
         return res.status(200).json({
             status: 'success',
             data: discuss

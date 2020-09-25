@@ -1,0 +1,332 @@
+{
+	"info": {
+		"_postman_id": "3d2da667-4e33-4802-ba9e-ac3c2137123d",
+		"name": "codebrew",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Sign Up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/users/?email=shuyangf@student.unimelb.edu.au&password=Haswf0204&username=haswf",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						""
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "shuyangf@student.unimelb.edu.au"
+						},
+						{
+							"key": "password",
+							"value": "Haswf0204"
+						},
+						{
+							"key": "username",
+							"value": "haswf"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/auth/login?email=shuyangf@student.unimelb.edu.au&password=Haswf0204",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "shuyangf@student.unimelb.edu.au"
+						},
+						{
+							"key": "password",
+							"value": "Haswf0204"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Discussion",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imhhc3dmIiwiZW1haWwiOiJzaHV5YW5nZkBzdHVkZW50LnVuaW1lbGIuZWR1LmF1IiwiaWF0IjoxNjAxMDU2MjYxLCJleHAiOjE2MDIzNTIyNjF9.sNqLWuGOLzg3nySN4WJKKBTUFiJHrB6lON_9WiMr4Xg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"message\": \"hello\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/discussions/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"discussions",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Discussion",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imhhc3dmIiwiZW1haWwiOiJzaHV5YW5nZkBzdHVkZW50LnVuaW1lbGIuZWR1LmF1IiwiaWF0IjoxNjAxMDU2MjYxLCJleHAiOjE2MDIzNTIyNjF9.sNqLWuGOLzg3nySN4WJKKBTUFiJHrB6lON_9WiMr4Xg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/discussions/5f6e2cfef31887387cbf7188",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"discussions",
+						"5f6e2cfef31887387cbf7188"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all discussions",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imhhc3dmIiwiZW1haWwiOiJzaHV5YW5nZkBzdHVkZW50LnVuaW1lbGIuZWR1LmF1IiwiaWF0IjoxNjAxMDU2MjYxLCJleHAiOjE2MDIzNTIyNjF9.sNqLWuGOLzg3nySN4WJKKBTUFiJHrB6lON_9WiMr4Xg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/discussions/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"discussions",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get One Discussion",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imhhc3dmIiwiZW1haWwiOiJzaHV5YW5nZkBzdHVkZW50LnVuaW1lbGIuZWR1LmF1IiwiaWF0IjoxNjAxMDU2MjYxLCJleHAiOjE2MDIzNTIyNjF9.sNqLWuGOLzg3nySN4WJKKBTUFiJHrB6lON_9WiMr4Xg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/discussions/5f6e2cfef31887387cbf7189",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"discussions",
+						"5f6e2cfef31887387cbf7189"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post A Reply",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imhhc3dmIiwiZW1haWwiOiJzaHV5YW5nZkBzdHVkZW50LnVuaW1lbGIuZWR1LmF1IiwiaWF0IjoxNjAxMDU2MjYxLCJleHAiOjE2MDIzNTIyNjF9.sNqLWuGOLzg3nySN4WJKKBTUFiJHrB6lON_9WiMr4Xg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"message\": \"hello\",\n    \"parentId\": \"5f6e2f1efb94c83b06fc0ee3\",\n    \"discussionId\":\"5f6e2cfef31887387cbf7189\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/replies/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"replies",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get A Reply",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imhhc3dmIiwiZW1haWwiOiJzaHV5YW5nZkBzdHVkZW50LnVuaW1lbGIuZWR1LmF1IiwiaWF0IjoxNjAxMDU2MjYxLCJleHAiOjE2MDIzNTIyNjF9.sNqLWuGOLzg3nySN4WJKKBTUFiJHrB6lON_9WiMr4Xg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/replies/5f6e306d62b0523cafe6e5f3",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"replies",
+						"5f6e306d62b0523cafe6e5f3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete A Reply",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imhhc3dmIiwiZW1haWwiOiJzaHV5YW5nZkBzdHVkZW50LnVuaW1lbGIuZWR1LmF1IiwiaWF0IjoxNjAxMDU2MjYxLCJleHAiOjE2MDIzNTIyNjF9.sNqLWuGOLzg3nySN4WJKKBTUFiJHrB6lON_9WiMr4Xg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/replies/5f6e314b1e28873d215dbcb4",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"replies",
+						"5f6e314b1e28873d215dbcb4"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -18,6 +18,10 @@ const DiscussionScheme = new mongoose.Schema({
         timestamps: true
 });
 
+DiscussionScheme.pre('find', function () {
+    this.populate('author', 'username');
+    this.populate('replies');
+});
 
 const Discussion = mongoose.model("discussion", DiscussionScheme, "discussion");
 module.exports = Discussion;

@@ -8,8 +8,8 @@ router.get(endpoints.discussion.collection, DiscussionController.getAllDiscussio
 
 router.post(endpoints.discussion.collection, passport.authenticate('jwt', {session: false}), DiscussionController.createDiscussion);
 
-router.get(endpoints.reply.single, DiscussionController.getOneDiscussion);
+router.get(endpoints.discussion.single, DiscussionController.getOneDiscussion);
 
-router.delete(endpoints.reply.single, passport.authenticate('jwt', {session: false}), DiscussionController.deleteOneDiscussion);
+router.delete(endpoints.discussion.single, passport.authenticate('jwt', {session: false}), DiscussionController.deleteOneDiscussion);
 
 module.exports = router;

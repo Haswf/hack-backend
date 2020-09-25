@@ -1,11 +1,16 @@
 const Reply = require('../models/Reply');
+const Discussion = require("../models/Discussion")
 
 exports.createReply = async (req, res) => {
     try {
-        const reply = new Reply();
+        let reply = new Reply();
         reply.message = req.body.message;
         reply.user = req.user;
-        reply.save();
+        reply.parentId = req.body.parentId;
+        reply = await reply.save();
+        const discussion = await Discussion.findOne({_id: req.body.discussionId})
+        discussion.replies.push(reply);
+        discussion.save();
 
         return res.status(201).json({
             status: 'success',
@@ -14,9 +19,9 @@ exports.createReply = async (req, res) => {
             }
         });
     } catch (err) {
-        return res.status(404).json({
+        return res.status(500).json({
             status: 'fail',
-            message: 'Failed to create the subject'
+            message: 'Failed to create a comment'
         });
     }
 };
@@ -57,7 +62,7 @@ exports.getOneReply = async (req, res) => {
 
 exports.deleteOneReply = async (req, res) => {
     try {
-        await Reply.delete({_id: req.params.id});
+        await Reply.deleteOne({_id: req.params.id, user: req.user});
         return res.status(200).json({
             status: 'success',
             data: null
