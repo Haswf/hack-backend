@@ -1,0 +1,7 @@
+{
+  "JWT": {
+    "key": "TheUniversityOfMelbourne"
+  },
+  "expiresIn": "15d"
+
+}
