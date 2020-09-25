@@ -27,7 +27,7 @@ db.once("open", async () => {
     console.log("here!!!!!!!!!!!!");
     console.log("Mongo connection started on " + db.host + ":" + db.port);
 });
-/*
+
 require("./caregiver");
 require("./Patient");
-require("./user");*/
+require("./user");
