@@ -18,5 +18,8 @@ module.exports = Object.freeze({
         logout: "/api/auth/logout",
         recover: "/api/auth/recover",
         oneTimeToken: "/api/auth/one-time-token"
+    },
+    search: {
+        search: "/api/search"
     }
 });

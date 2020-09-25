@@ -21,6 +21,7 @@ const ReplyScheme = new mongoose.Schema({
     versionKey: false,
     timestamps: true});
 
+ReplyScheme.index({'$**': 'text'});
 
 ReplyScheme.pre('find', function () {
     this.populate('user', 'username');

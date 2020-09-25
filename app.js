@@ -11,7 +11,7 @@ const discussionRouter = require("./routes/discussion")
 const authRouter = require("./routes/auth")
 const replyRouter = require("./routes/reply")
 const bodyParser = require('body-parser');
-
+const searchRouter =  require("./routes/search");
 mongoose.connect("mongodb://comp30022:renlord@haswf.com:37017/?authSource=eportfolio-dev&readPreference=primary&appname=MongoDB%20Compass&ssl=false");
 const app = express();
 // Allows CORS in development
@@ -32,6 +32,7 @@ app.use('/', discussionRouter);
 app.use('/', replyRouter);
 app.use('/', userRouter);
 app.use('/', authRouter);
+app.use('/', searchRouter);
 
 
 // catch 404 and forward to error handler
