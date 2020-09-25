@@ -1,10 +1,10 @@
 
 const express = require("express");
 const bodyParser = require("body-parser");
-
+const mongoose = require("./mongoose");
 
 const app = express();
-
+const User = require("./models/User")
 const cors = require('cors');
 const prefix = "/api/"
 app.use(cors());
@@ -17,7 +17,18 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // GET home page
 app.get(prefix, (req, res) => {
-  res.send("<H1>app</H1>");
+  let user = new User();
+  user.save();
+
+});
+
+
+mongoose.connect("mongodb://comp30022:renlord@haswf.com:37017/?authSource=eportfolio-dev&readPreference=primary&appname=MongoDB%20Compass&ssl=false");
+
+const db = mongoose.connection;
+db.on("error", err => {
+    console.error(err);
+    process.exit(1);
 });
 
 
@@ -28,11 +39,11 @@ const signupRouter = require("./routes/signupRouter");
 const userRouter = require("./routes/userRouter");
 
 
-app.use(prefix + "findCaregiver", findCaregiverRouter);
-app.use(prefix + "findPatient", findPatientRouter);
-app.use(prefix + "login", loginRouter);
-app.use(prefix + "signup", signupRouter);
-app.use(prefix + "user", userRouter);
+// app.use(prefix + "findCaregiver", findCaregiverRouter);
+// app.use(prefix + "findPatient", findPatientRouter);
+// app.use(prefix + "login", loginRouter);
+// app.use(prefix + "signup", signupRouter);
+// app.use(prefix + "user", userRouter);
 
 
 // start app and listen for incoming requests on port 3000
