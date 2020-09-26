@@ -11,6 +11,6 @@ router.get(endpoints.user.single, passport.authenticate('jwt', {session: false})
 
 router.delete(endpoints.user.single, passport.authenticate('jwt', {session: false}), UserController.delete);
 
-router.post(endpoints.user.reset, passport.authenticate('jwt', {session: false}), UserController.resetPassword);
+// router.post(endpoints.user.reset, passport.authenticate('jwt', {session: false}), UserController.resetPassword);
 
 module.exports = router;

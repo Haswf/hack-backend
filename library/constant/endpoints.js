@@ -11,13 +11,9 @@ module.exports = Object.freeze({
     user: {
         collection: "/api/users/",
         single: "/api/users/:id",
-        reset: "/api/users/reset-password"
     },
     auth: {
         login: "/api/auth/login",
-        logout: "/api/auth/logout",
-        recover: "/api/auth/recover",
-        oneTimeToken: "/api/auth/one-time-token"
     },
     search: {
         search: "/api/search"
@@ -25,5 +21,9 @@ module.exports = Object.freeze({
     symptom: {
         collections: "/api/symptoms",
         single: "/api/symptoms/:id",
+    },
+    surveyResult: {
+        collections: "/api/survey-results",
+        single: "/api/survey-results/:id",
     }
 });

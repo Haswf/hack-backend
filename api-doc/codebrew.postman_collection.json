@@ -88,7 +88,7 @@
 			"response": []
 		},
 		{
-			"name": "Create Discussion",
+			"name": "Create a discussion",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -104,7 +104,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"message\": \"hello\"\n}",
+					"raw": "{\n    \"message\": \"hello\",\n    \"title\": \"hello\",\n    \"surveyResultId\": \"5f6f0fb9d0f79e9eceeb9419\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -127,7 +127,7 @@
 			"response": []
 		},
 		{
-			"name": "Delete Discussion",
+			"name": "Delete a discussion",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -163,14 +163,7 @@
 			},
 			"request": {
 				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imhhc3dmIiwiZW1haWwiOiJzaHV5YW5nZkBzdHVkZW50LnVuaW1lbGIuZWR1LmF1IiwiaWF0IjoxNjAxMDU2MjYxLCJleHAiOjE2MDIzNTIyNjF9.sNqLWuGOLzg3nySN4WJKKBTUFiJHrB6lON_9WiMr4Xg",
-							"type": "string"
-						}
-					]
+					"type": "noauth"
 				},
 				"method": "GET",
 				"header": [],
@@ -199,7 +192,7 @@
 			"response": []
 		},
 		{
-			"name": "Get One Discussion",
+			"name": "Get a discussion",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -414,6 +407,83 @@
 						"api",
 						"symptoms",
 						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Survey Results",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/survey-results",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"survey-results"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Submit a survey result",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imhhc3dmIiwiZW1haWwiOiJzaHV5YW5nZkBzdHVkZW50LnVuaW1lbGIuZWR1LmF1IiwiaWF0IjoxNjAxMTEzNzk2LCJleHAiOjE2MDI0MDk3OTZ9.nNZHjjRqOstPnVshHYPShZJ6nEfTzn3z4fB6GIrqblU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"age\": 12,\n    \"gender\": \"male\",\n    \"city\": \"Melbourne\",\n    \"contact\": \"000\",\n    \"description\": \"description\",\n    \"symptoms\": [\"5f6f055eb91eb090a3d15ee5\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/survey-results",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"survey-results"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a survey result",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/survey-results/5f6f0fb9d0f79e9eceeb9419",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"survey-results",
+						"5f6f0fb9d0f79e9eceeb9419"
 					]
 				}
 			},

@@ -37,5 +37,5 @@ const SurveyResultScheme = new mongoose.Schema({
         timestamps: true
 });
 
-const SurveyResult = mongoose.model("surveyResult", SurveyResultScheme, "surveyResult");
+const SurveyResult = mongoose.model("SurveyResult", SurveyResultScheme, "surveyResult");
 module.exports = SurveyResult;

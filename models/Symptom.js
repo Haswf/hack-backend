@@ -19,5 +19,5 @@ const SymptomScheme = new mongoose.Schema({
         timestamps: true
 });
 
-const Symptom = mongoose.model("symptom", SymptomScheme, "symptom");
+const Symptom = mongoose.model("Symptom", SymptomScheme, "symptom");
 module.exports = Symptom;
