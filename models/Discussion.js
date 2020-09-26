@@ -4,7 +4,19 @@ const { Schema } = mongoose;
 const DiscussionScheme = new mongoose.Schema({
     author: {
         type: Schema.Types.ObjectId,
-        ref: "User"
+        ref: "User",
+        required: true
+    },
+
+    surveyResultId: {
+        type: Schema.Types.ObjectId,
+        ref: "SurveyResult",
+        required: true
+    },
+
+    title: {
+        type: String,
+        required: true
     },
 
     replies: {

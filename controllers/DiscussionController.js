@@ -6,20 +6,21 @@ const {check, validationResult} = require('express-validator');
 exports.createDiscussion = async (req, res) => {
     let reply = new Reply();
     let discussion = new Discussion();
-    discussion = await discussion.save();
 
-    reply.user = req.user;
-    reply.message = req.body.message;
-    reply.parentId = null;
-    reply.discussionId = discussion;
-    reply = await reply.save();
 
-    discussion.author = req.user;
-    discussion.replies.push(reply);
-    discussion = await discussion.save();
 
     try {
-        discussion.save()
+        reply.user = req.user;
+        reply.message = req.body.message;
+        reply.parentId = null;
+        reply.discussionId = discussion;
+        await reply.save();
+        // Save survey resultId
+        discussion.surveyResultId = req.body.surveyResultId;
+        discussion.author = req.user;
+        discussion.title = req.body.title;
+        discussion.replies.push(reply);
+        await discussion.save();
     } catch (err) {
         return res.status(500).json({
             status: 'fail',
