@@ -10,7 +10,7 @@ const patientSchema = new mongoose.Schema({
     age:String,
     address:String,
     contact_information:String
-},{versionKey: false});
+},{timestamps: true});
 
 const Patient = mongoose.model("Patient", patientSchema, "Patient");
 module.exports = Patient;

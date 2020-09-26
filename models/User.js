@@ -36,6 +36,10 @@ const userSchema = new Schema({
             type: Boolean,
             default: false
         },
+        isVerified: {
+            type: Boolean,
+            default: false
+        }
     },
     // this feature will automatically set createdAt and updatedAt
     {timestamps: true}

@@ -18,7 +18,6 @@ const ReplyScheme = new mongoose.Schema({
         ref: "Discussion"
     }
 },{
-    versionKey: false,
     timestamps: true});
 
 ReplyScheme.index({'$**': 'text'});

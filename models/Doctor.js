@@ -8,7 +8,8 @@ const DoctorScheme = new mongoose.Schema({
     username: String,
     contact_information:String,
     image: String
-},{versionKey: false});
+},{versionKey: false,
+    timestamps: true});
 
 const Doctor = mongoose.model("doctor", DoctorScheme, "doctor");
 module.exports = Doctor;

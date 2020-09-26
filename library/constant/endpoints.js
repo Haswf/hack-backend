@@ -21,5 +21,9 @@ module.exports = Object.freeze({
     },
     search: {
         search: "/api/search"
+    },
+    symptom: {
+        collections: "/api/symptoms",
+        single: "/api/symptoms/:id",
     }
 });

@@ -359,6 +359,65 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Get All Symptoms",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/symptoms/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"symptoms",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create A Symptom",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imhhc3dmIiwiZW1haWwiOiJzaHV5YW5nZkBzdHVkZW50LnVuaW1lbGIuZWR1LmF1IiwiaWF0IjoxNjAxMTAyMTQwLCJleHAiOjE2MDIzOTgxNDB9.l__Oj7iEXaj8EBlTMC1B4MduVwfXsIhownVRHYqbtvE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"happy\",\n    \"description\": \"make you laugh\" \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/symptoms/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"symptoms",
+						""
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
