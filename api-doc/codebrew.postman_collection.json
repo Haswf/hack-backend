@@ -63,7 +63,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/api/auth/login?email=shuyangf@student.unimelb.edu.au&password=Haswf0204",
+					"raw": "localhost:3000/api/auth/login?email=shuyang@student.unimelb.edu.au&password=Haswf0204",
 					"host": [
 						"localhost"
 					],
@@ -76,7 +76,7 @@
 					"query": [
 						{
 							"key": "email",
-							"value": "shuyangf@student.unimelb.edu.au"
+							"value": "shuyang@student.unimelb.edu.au"
 						},
 						{
 							"key": "password",
@@ -89,6 +89,9 @@
 		},
 		{
 			"name": "Create a discussion",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -100,11 +103,11 @@
 						}
 					]
 				},
-				"method": "POST",
+				"method": "GET",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"message\": \"hello\",\n    \"title\": \"hello\",\n    \"surveyResultId\": \"5f6f0fb9d0f79e9eceeb9419\"\n}",
+					"raw": "{\n    \"message\": \"Renlord is my king\",\n    \"title\": \"I love renlord\",\n    \"surveyResultId\": \"5f6f5e01fa4eeaf96a34bf0d\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -354,7 +357,7 @@
 			"response": []
 		},
 		{
-			"name": "Get All Symptoms",
+			"name": "Get all symptoms",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -374,7 +377,7 @@
 			"response": []
 		},
 		{
-			"name": "Create A Symptom",
+			"name": "Create a symptom",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -413,7 +416,7 @@
 			"response": []
 		},
 		{
-			"name": "Get All Survey Results",
+			"name": "Get all survey results",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -439,7 +442,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imhhc3dmIiwiZW1haWwiOiJzaHV5YW5nZkBzdHVkZW50LnVuaW1lbGIuZWR1LmF1IiwiaWF0IjoxNjAxMTEzNzk2LCJleHAiOjE2MDI0MDk3OTZ9.nNZHjjRqOstPnVshHYPShZJ6nEfTzn3z4fB6GIrqblU",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imhhc3dmIiwiZW1haWwiOiJzaHV5YW5nQHN0dWRlbnQudW5pbWVsYi5lZHUuYXUiLCJpYXQiOjE2MDExMzQwNjEsImV4cCI6MTYwMjQzMDA2MX0.tUGbt_P3cWUNvMTuUBIkclEafSdwoN5mm49PvcwiJDc",
 							"type": "string"
 						}
 					]
@@ -448,7 +451,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"age\": 12,\n    \"gender\": \"male\",\n    \"city\": \"Melbourne\",\n    \"contact\": \"000\",\n    \"description\": \"description\",\n    \"symptoms\": [\"5f6f055eb91eb090a3d15ee5\"]\n}",
+					"raw": "{\n    \"age\": 12,\n    \"gender\": \"male\",\n    \"city\": \"Melbourne\",\n    \"contact\": \"000\",\n    \"description\": \"description\",\n    \"symptoms\": [\"5f6f2e01af31dacb9331668a\"]\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -475,7 +478,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/api/survey-results/5f6f0fb9d0f79e9eceeb9419",
+					"raw": "localhost:3000/api/survey-results/5f6f2e0faf31dacb93316690",
 					"host": [
 						"localhost"
 					],
@@ -483,7 +486,7 @@
 					"path": [
 						"api",
 						"survey-results",
-						"5f6f0fb9d0f79e9eceeb9419"
+						"5f6f2e0faf31dacb93316690"
 					]
 				}
 			},
