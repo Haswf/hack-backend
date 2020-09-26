@@ -38,7 +38,15 @@ exports.createDiscussion = async (req, res) => {
 
 exports.getAllDiscussion = async (req, res) => {
     try {
-        const discussions = await Discussion.find()
+        const discussions = await Discussion.find().populate({
+            path: 'surveyResultId',
+            select: "symptoms",
+            // Get friends of friends - populate the 'friends' array for every friend
+            populate: {
+                path: 'symptoms',
+                select: "name description"
+            }
+        });
         return res.status(200).json({
             status: 'success',
             data: {
